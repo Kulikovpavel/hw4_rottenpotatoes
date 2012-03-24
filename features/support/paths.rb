@@ -16,11 +16,25 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 	  
-	when /^the (.*) page for "(.*)"$/
+	when /^the edit page for "(.*)"$/
 		
 			
-			a=Movie.find_by_title($2)
-			self.send($1+'_movie_path(a)')
+			
+			edit_movie_path(Movie.find_by_title($1))
+			
+	when /^the details page for "(.*)"$/
+		
+			
+			
+			show_movie_path(Movie.find_by_title($1))	
+	
+	when /^the Similar Movies page for "(.*)"$/
+		
+			
+			
+			findir_movie_path(Movie.find_by_title($1))	
+			
+	
 		
 
     # Add more mappings here.
