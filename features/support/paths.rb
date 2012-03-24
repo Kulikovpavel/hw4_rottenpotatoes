@@ -17,8 +17,7 @@ module NavigationHelpers
       '/'
 	  
 	  
-	when /the Similar Movies page/
-	    '/find/'
+	
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
