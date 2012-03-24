@@ -14,8 +14,9 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
-	  
+      '/movies'
+	when /^the RottenPotatoes home page$/
+	  '/movies'  
 	when /^the edit page for "(.*)"$/
 		
 			
@@ -26,13 +27,13 @@ module NavigationHelpers
 		
 			
 			
-			show_movie_path(Movie.find_by_title($1))	
+			movie_path(Movie.find_by_title($1))	
 	
 	when /^the Similar Movies page for "(.*)"$/
 		
 			
 			
-			findir_movie_path(Movie.find_by_title($1))	
+			finddir_movie_path(Movie.find_by_title($1))	
 			
 	
 		
