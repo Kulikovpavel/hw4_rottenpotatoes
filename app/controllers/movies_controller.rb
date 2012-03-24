@@ -62,6 +62,12 @@ class MoviesController < ApplicationController
   def finddir
 	@movie = Movie.find params[:id]
 	@movies = Movie.find_all_by_director(@movie.director)
+	@movies.delete @movie
+	if @movie.director==''
+		flash[:notice] = "'#{@movie.title}' has no director info"	
+		
+		redirect_to movies_path
+	end
   
   end
 

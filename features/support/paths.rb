@@ -16,11 +16,11 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 	  
-	when /^the (.*) page for (.*)$/
+	when /^the (.*) page for "(.*)"$/
 		
-			print $2
-			print Movie.find_all_by_title($2)
-			self.send($1+'_movie_path('+Movie.find_all_by_title($2)+')')
+			
+			a=Movie.find_by_title($2)
+			self.send($1+'_movie_path(a)')
 		
 
     # Add more mappings here.
